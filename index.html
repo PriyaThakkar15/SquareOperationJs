@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SQUARE OPERATION</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="h-100">
+
+<!-- Start your project here-->
+<div id="theme" class="background h-100 w-100">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-6 h-auto text-center ">
+                <div id="square">
+                    <h1 id="previewtext">HELLO</h1>
+                </div>
+            </div>
+
+            <div class="col-6 h-auto text-center bgtext">
+
+                <h6 class="font-weight-bold">Font size:<span class="label label-default ">
+                    <button onclick="plus()" type="button" class="btn btn-default my-2 mx-2"> + </button>
+                    <button  type="button" class="btn btn-default my-2 mx-2"> 32 </button>
+                    <button onclick="minus()" type="button" class="btn btn-default my-2 my-2"> - </button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Corner :<span class="label label-default ">
+                    <button onclick="cornerplus()" type="button" class="btn btn-default my-2 mx-2 "> + </button>
+                    <button id="number" type="button" class="btn btn-default my-2 mx-2"> 32 </button>
+                    <button onclick="cornerminus()" type="button" class="btn btn-default my-2 my-2 "> - </button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Width :<span class="label label-default ">
+                    <button onclick="widthplus()" type="button" class="btn btn-default my-2 mx-2"> + </button>
+                    <button  type="button" class="btn btn-default my-2 mx-2"> 32 </button>
+                    <button onclick="widthminus()" type="button" class="btn btn-default my-2 my-2"> - </button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Height :<span class="label label-default ">
+                    <button onclick="heightplus()" type="button" class="btn btn-default my-2 mx-2"> + </button>
+                    <button type="button" class="btn btn-default my-2 mx-2"> 32 </button>
+                    <button onclick="heightminus()" type="button" class="btn btn-default my-2 my-2"> - </button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Back color :<span class="label label-default">
+                    <button onclick="bgred()" type="button" class="btn btn-danger">RED</button>
+                    <button onclick="bgblue()" type="button" class="btn btn-primary">BLUE</button>
+                    <button onclick="bggreen()" type="button" class="btn btn-success">GREEN</button>
+                </span></h6>
+
+                <h6 class="font-weight-bold">Theme:<span class="label label-default ">
+                     <button onclick="lighttheme()" type="button" class="btn btn-light my-2">Light</button>
+                     <button onclick="darktheme()" type="button" class="btn btn-dark my-2">Dark</button>
+                </span></h6>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Start your project here-->
+<script>
+
+    var square = document.getElementById("square");
+    var defaultval = 32;
+    previewtext.setAttribute("data-size", "32");
+    previewtext.setAttribute("data-height", "32");
+    previewtext.setAttribute("data-width", "32");
+
+    function plus() {
+        var size = previewtext.getAttribute("data-size");
+        console.log(size);
+        previewtext.style.fontSize = (size++) + "px";
+        previewtext.setAttribute("data-size", size);
+        var value = parseInt(document.getElementById('number').value, 32);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+    }
+    function minus() {
+        var size = previewtext.getAttribute("data-size");
+        console.log(size);
+        previewtext.style.fontSize = (size--) + "px";
+        previewtext.setAttribute("data-size", size);
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+    }
+
+    function cornerplus() {
+        var size = square.getAttribute("data-size");
+        console.log(size);
+        square.style.border = "1px solid black";
+        square.style.borderRadius = (size++) + "px";
+        square.setAttribute("data-size", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+    function cornerminus() {
+        var size = square.getAttribute("data-size");
+        console.log(size);
+        square.style.borderRadius = (size--) + "px";
+        square.setAttribute("data-size", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+    function heightplus() {
+        var size = square.getAttribute("data-height");
+        console.log(size);
+        square.style.height = (size++) + "px";
+        square.setAttribute("data-height", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+    function heightminus() {
+        var size = square.getAttribute("data-height");
+        console.log(size);
+        square.style.height = (size--) + "px";
+        square.setAttribute("data-height", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+    function widthplus() {
+        var size = square.getAttribute("data-width");
+        console.log(size);
+        square.style.width = (size++) + "px";
+        square.setAttribute("data-width", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+    function widthminus() {
+        var size = square.getAttribute("data-width");
+        console.log(size);
+        square.style.width = (size--) + "px";
+        square.setAttribute("data-width", size);
+        var val = parseInt(document.getElementById('number').val, 10);
+        val = isNaN(val) ? 0 : val;
+        val++;
+        document.getElementById('number').val = val;
+    }
+
+
+    function bgred() {
+        document.getElementById("square").style.backgroundColor = "#ff0000";
+    }
+
+    function bgblue() {
+        document.getElementById("square").style.backgroundColor = "#3225d1";
+    }
+
+    function bggreen() {
+        document.getElementById("square").style.backgroundColor = "#0e700a";
+    }
+
+    function darktheme() {
+        document.getElementById("theme").style.color = "white";
+        document.getElementById("theme").style.backgroundColor = "black";
+    }
+    function lighttheme() {
+        document.getElementById("theme").style.color = "black";
+        document.getElementById("theme").style.backgroundColor = "white";
+    }
+
+</script>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
